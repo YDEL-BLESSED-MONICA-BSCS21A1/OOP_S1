@@ -1,0 +1,65 @@
+namespace User
+{
+    public interface IStudent
+    {
+        string Course { get; }
+        string Name { get; }
+        int Age { get; }
+        string Gender { get; }
+        string Height { get; }
+
+    }
+
+    public class Stud : IStudent
+    {
+        public string Name => "Blessed Monica A. Ydel";
+        public string Course => "BSCS";
+
+        public int Age => 20;
+
+        public string Gender => "Female";
+        public string Height => "5′2″";
+    }
+
+    public interface ITeacher
+    {
+        string Course { get; }
+        string Name { get; }
+        int Age { get; }
+        string Gender { get; }
+        string Height { get; }
+    }
+    public class Teach : ITeacher
+    {
+        public string Name => "Nino Francisco Calzada Alamo";
+        public string Course => "Professor";
+
+        public int Age => 35;
+
+        public string Gender => "Male";
+
+        public string Height => "6′4″";
+    }
+    class program
+    {
+        static void Main(string[] args)
+        {
+            IStudent stud = new Stud();
+            ITeacher teach = new Teach();
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine($"Student: \t{stud.Name}");
+            Console.WriteLine($"Age: \t\t{stud.Age}");
+            Console.WriteLine($"Course: \t{stud.Course}");
+            Console.WriteLine($"Height: \t{stud.Height}");
+            Console.WriteLine($"Gender: \t{stud.Gender}\r\n");
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine($"Teacher: \t{teach.Name}");
+            Console.WriteLine($"Course: \t{teach.Course}");
+            Console.WriteLine($"Age: \t\t{teach.Age}");
+            Console.WriteLine($"Height: \t{teach.Height}");
+            Console.WriteLine($"Gender: \t{teach.Gender}");
+
+        }
+    }
+}
